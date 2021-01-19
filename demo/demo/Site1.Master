@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="demo.Site1" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    
+    <%--bootstrap css--%>
+    <link href="boostrap/css/bootstrap.min.css" rel ="stylesheet" />
+    <%--datatables css--%>
+    <link href="datatable/css/jquery.dataTables.min.css" rel="stylesheet" />
+   
+ 
+        <%--our custom css--%>
+    <link href="csss/Style.css" rel="stylesheet" />
+ 
+    <%--jquery--%>
+    <script src="boostrap/js/bootstrap.min.js"></script>
+    <%--popper js--%>
+    <script src="boostrap/js/jquery-3.3.1.slim.min.js"></script>
+    <%--bootstrap js--%>
+    <script src="boostrap/js/popper.min.js"></script>
+ 
+ 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img src="imgs/logo-spa-dep.jpg" width="30" height="30" />
+                    NTT-Team
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="homepage.aspx">Trang chủ</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="DiemDL.aspx">Những điểm du lịch</a>
+                        </li>
+                         <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkDT" runat="server" OnClick="LinkDT_Click" >Đặt Tour</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkTT" runat="server" OnClick="LinkTT_Click" >Thông tin đặt tour</asp:LinkButton>
+                        </li>
+                         <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkQL" OnClick="LinkQL_Click" runat="server">Quản Lý</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkST" OnClick="LinkST_Click" runat="server">Sửa Tour</asp:LinkButton>
+                        </li>
+ 
+                    </ul>
+ 
+                    <ul class="navbar-nav">
+                        
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkAdmin" runat="server" PostBackUrl="~/adminlogin.aspx" OnClick="LinkAdmin_Click">Admin</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkDN" runat="server"  OnClick="LinkDN_Click" PostBackUrl="~/User.aspx">Đăng nhập</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkDX" runat="server" OnClick="LinkDX_Click"  >Đăng xuất</asp:LinkButton>
+                        </li>
+ 
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkXC" runat="server"  >Xin chào</asp:LinkButton>
+ 
+                        </li>
+                    </ul>
+                </div>
+ 
+ 
+            </nav>
+        </div>
+ 
+ 
+        <!-- Main Content Placeholder -->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Main Content Placeholder -->
+ 
+    </form>
+</body>
+</html>
